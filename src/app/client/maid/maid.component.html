@@ -1,0 +1,110 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="d-flex justify-content-center" style="margin-top: 150px;">
+
+
+    <input type="text" style="width: 50%;" id="search-bar" placeholder="Search" [(ngModel)]="query" >
+  </div>
+</div>
+
+<div class="d-flex justify-content-center mt-5">
+  <ul>
+    <li class="booking-card " *ngFor="let l of list | searchFilter: query"
+      style="background-image: url(http://localhost:3500/uploads/{{l.profile}})">
+      <div class="book-container">
+        <div class="content">
+          <a [routerLink]="['/booking/',l.maid_id]" class="btn">Book</a>
+        </div>
+      </div>
+      <div class="informations-container">
+        <h2 class="title">{{l.fname}} {{l.lname}}</h2>
+        <p class="sub-title"><strong>Categories :</strong> {{l.array_agg}}</p>
+        <p class="sub-title" style="margin-bottom: 23px;">{{l.location_name}}, {{l.city}}</p>
+        <a [routerLink]="['/maid-profile/',l.maid_id]" class="standard-btn">Profile</a>
+        <!-- <a class="btn btn-info" [routerLink]="['/maid-profile/',l.maid_id]" style="background-color: #007BCC; margin-top: 10px; color: white;">Update</a> -->
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+<!-- <body> -->
+
+<!-- <div class="container">
+
+  <div class="col">
+
+    <div class="form-group">
+      <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query" id="listSearch">
+    </div>
+  </div>
+<div class="row">
+<div class="col">
+  <div class="cards" style="margin-top: 250px;" *ngFor="let l of list | searchFilter: query">
+    <div class="imgBx">
+      <img src="http://localhost:3500/uploads/{{l.profile}}">
+    </div>
+    <div class="content">
+      <div class="details">
+        <h2>{{l.fname}} {{l.lname}}<br /><span>{{l.array_agg}}</span></h2>
+        <ul class="social_icons">
+          <li>
+            <a [routerLink]="['/maid-profile/',l.maid_id]">Profile</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+</div> -->
+<!-- </body>-->
+
+<!-- <div class="container mt-5" style="max-width: 550px;">
+
+  <div class="form-group">
+    <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="query" id="listSearch">
+  </div>
+
+  <div class="card mb-1" *ngFor="let data of list | searchFilter: query">
+    <div class="card-body">
+      <h5 class="card-title">{{data.fname}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{data.lname}}</h6>
+      <p class="card-text">{{data.email}}</p>
+    </div>
+  </div>
+
+</div> -->
+
+
+<!-- <div class="container">
+  <div class="cards">
+    <div class="card" *ngFor="let l of list">
+      <div class="card-hero">
+        <img
+          src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MDI3Nzg4NQ&ixlib=rb-1.2.1&q=85"
+          width="288" />
+      </div>
+      <div class="card-header">
+        <h3>{{l.fname}}</h3>
+      </div>
+      <div class="card-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Enim facilisis gravida neque convallis a. Volutpat diam ut venenatis tellus.</p>
+      </div>
+      <div class="card-footer">
+        <div class="footer-item">
+          <img
+            src="https://images.unsplash.com/photo-1581456495146-65a71b2c8e52?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MDI3Nzc5MQ&ixlib=rb-1.2.1&q=85"
+            class="avatar" width="32" height="32" />
+        </div>
+        <div class="footer-item">
+          <strong>{{l.fname}}</strong>
+          <span class="muted">2h ago</span>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div> -->

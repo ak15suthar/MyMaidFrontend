@@ -1,0 +1,151 @@
+<app-navbar></app-navbar>
+<div class="breadcomb-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="breadcomb-list">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="breadcomb-wp">
+                <div class="breadcomb-icon">
+                  <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="breadcomb-ctn">
+                  <h2>Booking</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="data-table-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="data-table-list">
+          <div class="basic-tb-hd">
+            <h2> Booking Table</h2>
+          </div>
+          <div class="table-responsive">
+            <table *ngIf="list" datatable class="row-border hover">
+              <thead>
+                <tr>
+                  <th>Client Name</th>
+                  <th>Category Name</th>
+                  <th>Booking Date</th>
+                  <th>Start Date</th>
+                  <!-- <th>End Date</th> -->
+                  <!-- <th>Preferable Start Time</th> -->
+                  <!-- <th>Preferable End Time</th> -->
+                  <th>House Size</th>
+                  <th>Address</th>
+                  <th>Comments</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let l of list">
+                  <td>{{l.fname}} </td>
+                  <td>{{l.category_name}}</td>
+                  <td>{{l.booking_date | date:"mediumDate"}}</td>
+                  <td>{{l.start_date | date:"mediumDate"}}</td>
+                  <!-- <td>{{l.end_date | date:"mediumDate"}}</td> -->
+                  <!-- <td>{{l.prefer_start_time}}</td> -->
+                  <!-- <td>{{l.prefer_end_time}}</td> -->
+                  <td>{{l.house_size}}</td>
+                  <td>{{l.door_no}}</td>
+                  <td>{{l.comments}}</td>
+                  <td *ngIf="l.status_id == 1">
+                    <a class="btn btn-sm btn-lg" style="color: white; background-color: rgb(83, 201, 83); "
+                      (click)="accept(l.booking_id)">Accept</a> &nbsp;
+                    <a class="btn btn-sm btn-lg" style="color: white; background-color: red; "
+                      (click)="reject(l.booking_id)">Reject</a>
+                  </td>
+                  <td *ngIf="l.status_id == 2">
+                    <a class="btn btn-success btn-sm btn-lg disabled" style="color: white;">Accepted</a>
+                  </td>
+                  <td *ngIf="l.status_id == 3">
+                    <a class="btn btn-danger btn-sm btn-lg disabled" style="color: white;"
+                      (click)="accept(l.booking_id)">Rejected</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container mt-5">
+    <table *ngIf="list" datatable class="row-border hover">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Client Name</th>
+                <th>Category Name</th>
+                <th>Booking Date</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Address</th>
+                <th>Status ID</th>
+                <th>Accept</th>
+                <th>Reject</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let l of list">
+                <td>{{l.booking_id}}</td>
+                <td>{{l.client_id}}</td>
+                <td>{{l.category_id}}</td>
+                <td>{{l.status_id}}</td>
+                <td><button (click)="accept(l.booking_id)">Accept</button></td>
+                <td><button (click)="reject(l.booking_id)">Reject</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="data-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="table-responsive">
+                        <table *ngIf="list" datatable class="row-border hover">
+                            <thead>
+                                <tr>
+                                    <th>Client ID</th>
+                                    <th>First name</th>
+                                    <th>Last name</th>
+                                    <th>Gender</th>
+                                    <th>Date Of Birth</th>
+                                    <th>Email</th>
+                                    <th>Profile</th>
+                                    <th>Is Disable</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let l of list">
+                                    <td>{{l.client_id}}</td>
+                                    <td>{{l.fname}}</td>
+                                    <td>{{l.lname}}</td>
+                                    <td>{{l.gender}}</td>
+                                    <td>{{l.dob | date:'mediumDate'}}</td>
+                                    <td>{{l.email}}</td>
+                                    <td><img [src]="['http://localhost:3500/uploads/'+l.profile]" style="width: 100px;height: 100px;" class="rounded"></td>
+                                    <td>{{l.isdisable}}</td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

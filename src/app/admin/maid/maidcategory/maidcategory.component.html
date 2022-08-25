@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<!-- <div class="container">
+    <form [formGroup]="myForm" (ngSubmit)="submit()">
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" icon="pi pi-plus" style="float: right"
+                    (click)="addMore()">Add</button>&nbsp;&nbsp;<br /><br />
+                <br /><br />
+            </div>
+            <div class="row" *ngFor="let category of category; let i = index">
+                &nbsp;&nbsp;&nbsp;
+                <div class="col">
+                    <div class="form-group">
+                        <label>Category Name</label>
+                        <select class="browser-default custom-select mb-4" [(ngModel)]="category.category_id"
+                            formControlName="category_id">
+                            <option value="" selected>Choose Category</option>
+                            <option *ngFor="let m of list" value="{{ m.category_id }}">
+                                {{ m.category_name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label>Charge</label>
+                        <input class="form-control" type="text" [(ngModel)]="category.charge"
+                            formControlName="charge" />
+                    </div>
+                </div>
+
+                <div class="col">
+                    <br />
+                    <button type="button" label="Remove" class="p-button-danger" style="float: right"
+                        (click)="remove(i)">Remove</button><br />
+                </div>
+            </div>
+        </div>
+        <div class="m-t-20 text-right">
+            <button type="submit" value="Submit">Submit</button>
+        </div>
+    </form>
+</div> -->
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="form-valide" [formGroup]="myForm" (ngSubmit)="submit()">
+                                <div class="form-group row">
+                                    <!-- <label class="col-lg-4 col-form-label" for="val-username">First Name <span
+                                            class="text-danger">*</span>
+                                    </label> -->
+                                    <div class="col-lg-12">
+                                        <button type="button" icon="pi pi-plus" style="float: right"
+                                            (click)="addMore()">Add</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row" style="margin-top: 40px;" *ngFor="let category of category; let i = index">
+                                    <div class="col-lg-4">
+                                        <select class="form-control" [(ngModel)]="category.category_id"
+                                            formControlName="category_id" name="val-skill">
+                                            <option value="" selected>Please select Category</option>
+                                            <option *ngFor="let m of list" value="{{ m.category_id }}">
+                                                {{ m.category_name }}</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <input type="text"  [(ngModel)]="category.charge" formControlName="charge" class="form-control"
+                                            id="val-username" name="val-username" placeholder=" Charge">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <button type="button" label="Remove" class="p-button-danger"
+                                            style="float: right" (click)="remove(i)">Remove</button><br />
+
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-lg-8 ml-auto">
+                                        <button type="submit" class="btn">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

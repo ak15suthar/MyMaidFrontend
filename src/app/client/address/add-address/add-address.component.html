@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <!-- <div id="wrapper" style="margin-top: 150px;">
+        <header>
+            <h2 class="text-center">Add your Address</h2>
+
+        </header>
+        <h2 class="h-bold d-flex justify-content-center">
+            <hr
+                style="width: 8%; height: 2px; margin-top: -3px; text-align: center; color:black; background-color: black;">
+        </h2>
+    </div> -->
+    <div class="well " style="margin-top: 150px;">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="line1">Door no</label>
+                        <input formControlName="door_no" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="line1">Street name</label>
+                        <input formControlName="street_name" type="text" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="line1">Pincode</label>
+                        <select formControlName="pincode" class="custom-select d-block form-control" id="image"
+                            required>
+                            <option value="-1">Select Pincode</option>
+                            <option *ngFor="let l of list" value="{{l.pincode}}">{{l.location_name}}</option>
+
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-12 text-center">
+                    <div class="col-sm-12">
+                        <button class="btn standard-btn float-right mt-4" type="submit">Add</button>
+                        <!-- <a class="btn btn-info float-right" style="background-color: #007BCC; color: white;">Update</a> -->
+                        <!-- <a class="btn standard-btn mt-4" style="margin-bottom: 2px;" [routerLink]="['/edit-address/',l.address_id]">Update</a> -->
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

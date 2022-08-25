@@ -1,0 +1,30 @@
+<div class="login-content" style="background-color: #007BCC;">
+    <!-- Login -->
+    <div class="nk-block toggled" id="l-login">
+        <div class="nk-form">
+            <form [formGroup]="myForm" (ngSubmit)="submit()">
+                <div class="input-group">
+                    <span class="input-group-addon nk-ic-st-pro"><i class="fa fa-envelope"></i></span>
+                    <div class="nk-int-st">
+                        <input type="text" formControlName="email" class="form-control" placeholder="Email">
+                    </div>
+                </div>
+                
+                <button type="submit" style="background-color: #007BCC;" data-ma-action="nk-login-switch" data-ma-block="#l-register"
+                    class="btn btn-login btn-success btn-float"><i class="fas fa-sign-in-alt">
+                    </i> 
+                </button>
+            </form>
+
+        </div>
+        <div class="nk-navigation nk-lg-ic">
+            <a [routerLink]="['/client-login']" data-ma-action="nk-login-switch" data-ma-block="#l-register"><i class="fas fa-lock" style="margin-right: 3px;"></i>
+                <span>Sign In</span></a>
+            
+        </div>
+    </div>
+
+    
+</div>
+
+

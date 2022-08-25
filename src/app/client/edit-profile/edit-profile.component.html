@@ -1,0 +1,116 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+    <div class="container">
+        <div id="wrapper" style="margin-top: 100px;">
+            <header>
+                <h2 class="text-center" style="color: black;">Edit Profile</h2>
+
+            </header>
+            <h2 class="h-bold d-flex justify-content-center">
+                <hr
+                    style="width: 5%; height: 2px; margin-top: -3px; text-align: center; color:black; background-color: black;">
+            </h2>
+        </div>
+        <div class="row gutters" style="margin-top: 30px;">
+            <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body"  style="height: 338px;margin-left: 10px;; margin-top: 16px;">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="avatar-upload">
+                                        <div class="avatar-edit">
+                                            <input type='file' (change)="handleFileInput($any($event).target.files)"
+                                                id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                            <label for="imageUpload"></label>
+                                        </div>
+                                        <div class="avatar-preview">
+                                            <div id="imagePreview"
+                                                style="background-image: url('http://localhost:3500/uploads/{{data.profile}}');">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="fullName">First Name</label>
+                                        <input type="text" id="fullName" value="{{data.fname}}" formControlName="fname"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="lName">Last Name</label>
+                                        <input type="text" id="lName" value="{{data.lname}}" formControlName="lname"
+                                            class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <label for="eMail">Gender</label>
+                                    <div class="form-group">
+
+                                        <div class="col-sm-3 text-secondary">
+                                            <input type="radio" name="gender" formControlName="gender" class="form"
+                                                value="male"> Male
+                                        </div>
+                                        <div class="col-sm-3 text-secondary">
+                                            <input type="radio" name="gender" formControlName="gender" class="form"
+                                                value="female">
+                                            Female
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="eMail">Date of Birth</label>
+                                        <input type="date" formControlName="dob" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" formControlName="phoneno1" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="phone">Alternate Phone Number</label>
+                                        <input type="tel" formControlName="phoneno2" class="form-control">
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="row gutters" style="margin-top: 15px;">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <!-- <a class="btn float-right standard-btn" [routerLink]="['/booking/',data.maid_id]">Book</a> -->
+                                        <button type="submit" class="btn standard-btn float-right">Update</button>
+                                        <!-- <a class="btn btn-info float-right" style="background-color: #007BCC; color: white;">Update</a> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

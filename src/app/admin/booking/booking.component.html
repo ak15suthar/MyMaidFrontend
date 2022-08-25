@@ -1,0 +1,76 @@
+<app-header></app-header>
+
+<div class="breadcomb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcomb-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Booking</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="data-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="basic-tb-hd">
+                        <h2> Booking Table</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table *ngIf="list" datatable class="row-border hover">
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Client ID</th>
+                                    <th>Maid ID</th>
+                                    <th>Category ID</th>
+                                    <th>Booking Date</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Preferable Start Time</th>
+                                    <th>Preferable End Time</th>
+                                    <th>House Size</th>
+                                    <th>Address ID</th>
+                                    <th>Comments</th>
+                                    <th>Status ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let l of list">
+                                    <td>{{l.booking_id}}</td>
+                                    <td>{{l.client_id}}</td>
+                                    <td>{{l.maid_id}}</td>
+                                    <td>{{l.category_id}}</td>
+                                    <td>{{l.booking_date}}</td>
+                                    <td>{{l.start_date}}</td>
+                                    <td>{{l.end_date}}</td>
+                                    <td>{{l.prefer_start_time}}</td>
+                                    <td>{{l.prefer_end_time}}</td>
+                                    <td>{{l.house_size}}</td>
+                                    <td>{{l.address_id}}</td>
+                                    <td>{{l.comments}}</td>
+                                    <td>{{l.status_id}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

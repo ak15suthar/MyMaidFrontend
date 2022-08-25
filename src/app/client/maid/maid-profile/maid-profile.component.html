@@ -1,0 +1,258 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div id="wrapper" style="margin-top: 120px;">
+    <header>
+      <h2 class="text-center"> Maid Profile</h2>
+
+    </header>
+    <h2 class="h-bold d-flex justify-content-center">
+      <hr style="width: 8%; height: 2px; margin-top: -3px; text-align: center; color:black; background-color: black;">
+    </h2>
+  </div>
+  <div class="row gutters-sm">
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                    <img src="http://localhost:3500/uploads/{{data.profile}}" alt="Admin"
+                        class="rounded" style=" height:230px; width:200px; border: 6px solid #F8F8F8;">
+                    <div class="mt-3">
+                        <h4>{{data.fname}} {{data.lname}}</h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-8">
+        <div class="card mb-3">
+            <div class="card-body">
+
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{data.email}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Gender</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{data.gender}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Date of Birth</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{data.dob | date:'mediumDate'}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                      <h6 class="mb-0">Experience</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                      {{data.experience}}
+                  </div>
+              </div>
+              <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Phone Number</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{data.phoneno1}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row" *ngIf="data.phoneno2 != null">
+                    <div class="col-sm-3">
+                        <h6 class="mb-0">Alternate Phone Number</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{data.phoneno2}}
+                    </div>
+                </div>
+               
+
+                <div class="row">
+                    <div class="col-sm-12">
+                      <!-- <a class="float-right" [routerLink]="['/booking']" class="standard-btn">Profile</a> -->
+                        <a class="btn float-right standard-btn" [routerLink]="['/booking/',data.maid_id]">Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+  <!-- <div class="main-body" style="margin-top: 40px;">
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="http://localhost:3500/uploads/{{data.profile}}" alt="Admin" class="rounded-circle" width="150">
+              <div class="mt-3">
+                <h4>{{data.fname}} {{data.lname}}</h4>
+                <p class="text-muted font-size-sm"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Full Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.fname}} {{data.lname}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.email}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Phone</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.phoneno1}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Gender</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.gender}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">phone no2</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.phoneno2}}
+              </div>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">DOB</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.dob | date: "mediumDate"}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Pincode</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.phoneno1}}
+              </div>
+            </div>
+            <hr>
+
+            <div class="row mt-4">
+              <div class="col-sm-12">
+                <a class="btn btn-info " [routerLink]="['/booking',data.maid_id]">Booking</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+<!-- <div class="row">
+
+    <div class="col-sm-12">
+        <ul class="list-inline rating-list" 
+            *ngFor="let star of stars" style="display: inline-block" >
+              <li (click)="countStar(star)"
+                  [ngClass]="{'selected': (star <= selectedValue)}">
+                <i class="fa fa-star"></i>
+              </li> 
+        </ul>
+    </div>
+  </div> -->
+
+<body>
+  <section id="testimonials">
+    <!--heading--->
+    <div id="wrapper" style="margin-top: 120px;">
+      <header>
+        <h2 class="text-center">Client Says</h2>
+  
+      </header>
+      <h2 class="h-bold d-flex justify-content-center">
+        <hr style="width: 35%; height: 2px; margin-top: -3px; text-align: center; color:black; background-color: black;">
+      </h2>
+    </div>
+    <!--testimonials-box-container------>
+    <div class="testimonial-box-container">
+
+      <!--BOX-1-------------->
+      <div class="testimonial-box" *ngFor="let l of list">
+        <!--top------------------------->
+        <div class="box-top">
+          <!--profile----->
+          <div class="profile">
+            <!--img---->
+            <div class="profile-img">
+              <img src="http://localhost:3500/uploads/{{l.profile}}" />
+            </div>
+            <!--name-and-username-->
+            <div class="name-user">
+              <strong> {{l.fname}} {{l.lname}}</strong>
+            
+            </div>
+          </div>
+          <!--reviews------>
+
+          <div class="reviews">
+            <p-rating [ngModel]="l.rating" [readonly]="true" [cancel]="false"></p-rating>
+          </div>
+        </div>
+        <!--Comments---------------------------------------->
+        <div class="client-comment">
+          <p>{{l.comments}}</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+</body>

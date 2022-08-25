@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<!-- Topic Cards -->
+       <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row gutters" style="margin-top: 15px;">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="text-right">
+                        <!-- <button class="btn1 btn2">Hover Me</button> <br> -->
+
+                        <!-- <a [routerLink]="['/add-address']" class="btn standard-btn-coloured float-right">Add <Address></Address></a> -->
+                        <!-- <button type="submit" class="btn btn-info float-right" style="background-color: #007BCC; color: white;">Add Address</button> -->
+                        <a class="btn btn-info float-right" [routerLink]="['/add-address']" style="background-color: #007BCC; color: white;">Add Address</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" *ngFor="let l of list">
+                    <a href="">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                               
+                                <div class="text-container">
+                                    <h6>{{data.fname}} {{data.lname}}</h6>
+                                    <hr>
+                                    <p>{{l.door_no}}, {{l.street_name}}, {{l.location_name}}, {{l.city}}</p>
+                                    <p>{{l.pincode}}</p>
+                                    <a class="btn standard-btn mt-4" style="margin-bottom: 2px;" [routerLink]="['/edit-address/',l.address_id]">Update</a>
+                      
+                                    <!-- <a class="btn btn-info justify-content-center mt-4" [routerLink]="['/edit-address/',l.address_id]" style="background-color: #007BCC; color: white;">Update</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,62 @@
+<input type="checkbox" name="sideMenuTrigger" id="sideMenuTrigger" style="display: none;">
+<nav>
+    <div class="col-md-5" style="padding: 15px;">
+        <a class="pull-left" onclick="openNav()"><i class="fas fa-stream fa-lg"></i> </a>
+    </div>
+    <div class="col-md-6" style="padding: 15px">
+        <a class="pull-left" routerLink="/">
+            <img src="/assets/maid/peril-logo3.png" style="height: 120px;" />
+        </a>
+    </div>
+    <!-- <span onclick="openNav()">&#9776; open</span>
+
+    <h4>Student Assesment</h4> -->
+</nav>
+
+<div id="mySidenav" class="sidenav">
+    <span href="javascript:void(0)" class="closebtn" style="color: aliceblue;" onclick="closeNav()">&times;</span>
+    <a [routerLink]="['/']">
+        <i class="fa fa-home" aria-hidden="true" style="margin-right: 5px;"></i>
+        Home
+    </a>
+    <a [routerLink]="['/maids']">
+        <i class="fas fa-person-booth" aria-hidden="true" style="margin-right: 5px;"></i>
+        Maids
+    </a>
+    <a [routerLink]="['/view-booking']">
+        <i class="fas fa-calendar-check" aria-hidden="true" style="margin-right: 5px;"></i>
+        Booking
+    </a>
+    <a [routerLink]="['/address']">
+        <i class="fas fa-map-marked-alt" aria-hidden="true" style="margin-right: 5px;"></i>
+        Address
+    </a>
+    <a [routerLink]="['/client-profile']">
+        <i class="fas fa-user" aria-hidden="true" style="margin-right: 5px;"></i>
+        Profile
+    </a>
+    <a [routerLink]="['/client-resetpassword']">
+        <i class="fas fa-unlock-alt" aria-hidden="true" style="margin-right: 5px;"></i>
+        Change Password
+    </a>
+    <a [routerLink]="['/contact-us']">
+        <i class="fa fa-phone-alt" aria-hidden="true" style="margin-right: 5px;"></i>
+        Contact Us
+    </a>
+
+
+<hr>
+<a *ngIf="!isClientLogIn" [routerLink]="['/client-register']">
+    <i class="fas fa-user-plus" aria-hidden="true" style="margin-right: 5px;"></i>
+    Sign Up
+</a>
+<a *ngIf="!isClientLogIn" [routerLink]="['/client-login']">
+    <i class="fas fa-sign-in-alt fa-lg" aria-hidden="true" style="margin-right: 5px;"></i>
+    Sign In
+</a>
+
+<a *ngIf="isClientLogIn" (click)="logout()">
+    <i class="fas fa-sign-in-alt fa-lg" aria-hidden="true" style="margin-right: 5px;"></i>
+    Logout
+</a>
+</div>

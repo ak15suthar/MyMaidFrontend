@@ -1,0 +1,179 @@
+<app-header></app-header>
+
+<div class="breadcomb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcomb-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Maid Profile</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container content-body page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl-6 col-md-12">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4" style="margin-top: 8px;">
+                            <div class="card-block text-center text-white" style="height: 300px;">
+                                <div class="m-b-25"> <img src="assets/img/6720.jpg" class="img-radius" style="height: 250px;" alt="User-Profile-Image"> </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">First Name</p>
+                                        <h6 class="text-muted f-w-400">{{data.fname}}</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Last Name</p>
+                                        <h6 class="text-muted f-w-400">{{data.lname}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Email</p>
+                                        <h6 class="text-muted f-w-400">{{data.email}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Gender</p>
+                                        <h6 class="text-muted f-w-400">{{data.gender}}</h6>
+                                    </div>
+                                    <div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Date of Birth</p>
+                                        <h6 class="text-muted f-w-400">{{data.dob}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Phone No. 1</p>
+                                        <h6 class="text-muted f-w-400">{{data.phoneno1}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Phone No. 2</p>
+                                        <h6 class="text-muted f-w-400">{{data.phoneno2}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Experience</p>
+                                        <h6 class="text-muted f-w-400">{{data.experience}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Pincode</p>
+                                        <h6 class="text-muted f-w-400">{{data.pincode}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Is Disable</p>
+                                        <h6 class="text-muted f-w-400">{{data.isdisable}}</h6>
+                                    </div>
+                                    <div class="col-sm-6" style="margin-top: 30px;">
+                                        <p class="m-b-10 f-w-600">Status ID</p>
+                                        <h6 class="text-muted f-w-400">{{data.status_id}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  <div class="breadcomb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcomb-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="fas fa-quidditch"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Category</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            <div class="breadcomb-report">
+                                <a [routerLink]="['/admin-maidcategory/',data.maid_id]"
+                                    routerLinkActive="router-link-active" data-toggle="tooltip"
+                                    data-placement="left" title="Add Category" class="btn"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="data-table-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="data-table-list">
+                    <div class="table-responsive">
+                        <table *ngIf="list" datatable class="row-border hover">
+                            <thead>
+                                <tr>
+                                    <th>Category ID</th>
+                                    <th>Charges</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let l of list">
+                                    <td>{{l.category_id}}</td>
+                                    <td>{{l.charge}}</td>
+                                    <td class="text-center">
+                                        <div class="dropdown dropdown-action">
+                                            <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown"
+                                                aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                            <div class="dropdown-menu dropdown-menu-right"
+                                                style="padding: 0px 30px;">
+
+
+                                                <div class="row" style="margin-top: 10px;">
+                                                    <a class="dropdown-item"
+                                                        [routerLink]="['/admin-editmaidcategory/',l.maid_id,l.category_id]"
+                                                        style="text-decoration: none; color: black;"><i
+                                                            class="far fa-edit"></i>&nbsp; Edit</a> <br>
+                                                </div>
+                                                <div class="row" style="margin-top: 10px; margin-bottom: 10px;"> <a
+                                                        class="dropdown-item"
+                                                        style="text-decoration: none; color: black;"
+                                                        (click)="delete(l.maid_id, l.category_id)" data-toggle="modal"
+                                                        data-target="#delete_patient"><i
+                                                            class="far fa-trash-alt"></i> &nbsp;
+                                                        Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

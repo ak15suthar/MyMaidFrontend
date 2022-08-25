@@ -1,0 +1,272 @@
+/* https://coolors.co/2c3e50-e74c3c-ffffff-3498db-95a3b3 */
+
+/* ========================
+Utilities
+======================== */
+
+.cf::before,
+.cf::after {
+    content: "";
+    display: table; 
+}
+
+.cf::after {
+    clear: both;
+}
+
+
+img {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+#img1 img{
+  border-radius: 10px;
+  padding:10px;
+  margin:10px;
+  width: 250px;
+  height: 200px;
+}
+
+/* ========================
+Global
+======================== */
+
+
+h1, h2, h3, h4, h5, h6, ul, ol, p {
+  margin-top: 0;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+p {
+  line-height: 1.5;
+}
+
+
+
+/* ========================
+Containers
+======================== */
+
+.container-fluid {
+  padding: 0 1em;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 996px;
+}
+
+/* ========================
+Navigation
+======================== */
+
+@keyframes show-header {
+    0% {
+        top: -4em;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+/* ========================
+Sections
+======================== */
+
+.splash {
+  background: url("/assets/images/m5.jpg") no-repeat fixed center;
+  height: 713px;
+	background-size: cover;
+	color: #424242;
+}
+
+.splash .container {
+  padding-top: 25vh; /* No JS fallback*/
+  padding-bottom: 25vh; /* No JS fallback*/
+}
+
+.profile-image {
+  border-radius: 50%;
+  display: block;
+  max-width: 200px;
+  margin: 0 auto 1em;
+  width: 100%;
+}
+
+.splash h1 {
+  font-size: 3em;
+  margin-bottom: .15em;
+  text-align: center;
+}
+
+.splash .lead, .splash .continue {
+  display: block;
+  text-align: center;
+}
+
+.splash .lead {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin-bottom: 1em;
+}
+
+.splash .continue {
+  font-size: 4em;
+}
+
+.splash .continue a {
+  border: 4px solid #616161;
+  border-radius: 100%;
+  color: #616161;
+  display: inline-block;
+  text-decoration: none;
+  width: 80px;
+}
+.splash .continue a:hover {
+  background-color: rgba(255, 255, 255, .25);
+}
+
+.intro .container, .features .container, .portfolio .container, .contact .container {
+  padding: 5em 0;
+}
+
+.intro, .features, .portfolio, .contact {
+  text-align: center;
+}
+
+.intro {
+  background-color: #E74C3C;
+  color: #fff;
+}
+
+.intro a, .intro a:hover, .intro a:focus, .intro a:active, .intro a:visited {
+  color: #fff;
+}
+
+.features img {
+  display: block;
+  margin: 0 auto 1em;
+  max-width: 200px;
+}
+
+.features .col-3 {
+  margin: 3em auto;
+  width: 100%;
+}
+
+.portfolio {
+  background-color: #3498DB;
+  color: #fff;
+}
+
+.gallery .gallery-image {
+  margin: 1em auto;
+  width: 100%;
+}
+
+.gallery .gallery-image img {
+  background-color: #23648F;
+  border-radius: 4px;
+  display: block;
+  height: auto;
+  padding: 6px;
+  width: 100%;
+}
+
+/* ========================
+Footer
+======================== */
+
+.footer {
+  background-color: #2C3E50;
+  color:  #fff;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.footer .container {
+  padding: 1em 0;
+}
+
+.footer a {
+  color: #fff;
+  margin-right: 1em;
+}
+
+.footer a:last-of-type {
+  margin-right: 0;
+}
+
+/* ========================
+Media Queries
+======================== */
+
+@media (min-width: 768px) {
+  
+  
+  .splash h1 {
+    font-size: 6em;
+  }
+  
+  .splash .lead {
+    font-size: 3em;
+  }
+  
+  .features .col-3 {
+    float: left;
+    margin: 2em 5% 0 0;
+    padding: 0 1em;
+    width: 30%;
+  }
+  
+  .features .col-3:last-of-type {
+    margin-right: 0;
+  }
+  
+  .gallery .gallery-image {
+    float: left;
+    margin-right: 2.5%;
+    width: 31.6666666667%;
+  }
+  
+  .gallery .gallery-image:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  
+  .contact form {
+    padding: 3em 2em 2em;
+  }
+  
+  .contact form input[type="submit"] {
+    padding: 1em 3em;
+    width: auto;
+  }
+  
+  .contact form input.full-half {
+    float: left;
+    margin-right: 2.5%;
+    width: 48.75%;
+  }
+  
+  .contact form input.full-half:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  
+  .contact form textarea {
+    height: 12em;
+  }
+  
+}
+
+  #wrapper{
+  margin:5% auto 0;
+  text-align:center;
+  }
+  

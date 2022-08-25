@@ -1,0 +1,28 @@
+@media (max-width: 767px) {
+    .container {
+      padding: 1.5rem 1.5rem 0;
+      padding: 0.9375rem 0.9375rem 0;
+    width: 100%;} }
+
+    .standard-btn {
+      text-decoration:none;
+      border: 3px solid #007BCC;
+      padding:10px 20px 10px 20px;
+      border-radius:2px;
+      color:#007BCC;
+      margin:5px;
+      /* font-size: 1.3em; */
+    }
+    .standard-btn-coloured {
+      text-decoration:none;
+      background:#007BCC;
+      border: 2px solid #007BCC;
+      padding:10px 20px 10px 20px;
+      border-radius:2px;
+      color:#FFFFFF;
+      margin:5px;
+    }
+    .standard-btn:hover {
+      color:#FFFFFF;
+      background-color:#007BCC;
+    }

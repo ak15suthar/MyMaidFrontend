@@ -1,0 +1,84 @@
+<app-header></app-header>
+
+<div class="breadcomb-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcomb-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Address</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            <div class="breadcomb-report">
+                                <a [routerLink]="['/admin-addaddress']" routerLinkActive="router-link-active"
+                                    data-toggle="tooltip" data-placement="left" title="Add Address" class="btn"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-validation">
+                            <form class="form-valide" [formGroup]="myForm" (ngSubmit)="submit()">
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-username">Door no<span
+                                            class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" formControlName="door_no" class="form-control"
+                                            id="val-username" name="val-username" placeholder="Door no">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-username">Street name<span
+                                            class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <input type="text" formControlName="street_name" class="form-control"
+                                            id="val-username" name="val-username" placeholder="Street name">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-lg-4 col-form-label" for="val-skill">Area Name <span
+                                            class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" formControlName="pincode" id="val-skill"
+                                            name="val-skill">
+                                            <option value="" disabled>Please select Area</option>
+                                            <option *ngFor="let l of listPincode" value="{{l.pincode}}">
+                                                {{l.location_name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-lg-8 ml-auto">
+                                        <button type="submit" class="btn">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,267 @@
+<app-navbar></app-navbar>
+
+<div class="main">
+    <div class="container">
+        <div class="row" style="margin-top: -45px;">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="breadcomb-list">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="breadcomb-wp">
+                                <div class="breadcomb-icon">
+                                    <i class="fas fa-user-edit"></i>
+                                </div>
+                                <div class="breadcomb-ctn">
+                                    <h2>Edit Profile</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                            <div class="breadcomb-report">
+                                <a [routerLink]="['/maid-profile']" routerLinkActive="router-link-active"
+                                    data-toggle="tooltip" data-placement="left" title="Profile" class="btn"><i class="fas fa-user"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row gutters" style="margin-top: 30px;">
+            <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body"  style="height: 338px;margin-left: 10px;; margin-top: 16px;">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="avatar-upload">
+                                        <div class="avatar-edit">
+                                            <input type='file' (change)="handleFileInput($any($event).target.files)"
+                                                id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                            <label for="imageUpload"></label>
+                                        </div>
+                                        <div class="avatar-preview">
+                                            <div id="imagePreview"
+                                                style="background-image: url('http://localhost:3500/uploads/{{data.profile}}');">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="fullName">First Name</label>
+                                        <input type="text" id="fullName" value="{{data.fname}}" formControlName="fname"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="lName">Last Name</label>
+                                        <input type="text" id="lName" value="{{data.lname}}" formControlName="lname"
+                                            class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <label for="eMail">Gender</label>
+                                    <div class="form-group">
+
+                                        <div class="col-sm-3 text-secondary">
+                                            <input type="radio" name="gender" formControlName="gender" class="form"
+                                                value="male"> Male
+                                        </div>
+                                        <div class="col-sm-3 text-secondary">
+                                            <input type="radio" name="gender" formControlName="gender" class="form"
+                                                value="female">
+                                            Female
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="eMail">Date of Birth</label>
+                                        <input type="date" formControlName="dob" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="eMail">Location</label>
+                                        <select class="form-control" formControlName="pincode" name="val-skill">
+                                            <option value="" disabled>Please select Area</option>
+                                            <option *ngFor="let l of listPincode" value="{{l.pincode}}">
+                                                {{l.location_name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="eMail">Phone Number</label>
+                                        <input type="tel" formControlName="phoneno1" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="eMail">Alternate Phone Number</label>
+                                        <input type="tel" formControlName="phoneno2" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row gutters" style="margin-top: 15px;">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <!-- <a class="btn btn-info float-right" [routerLink]="['/admin-editprofile']" style="background-color: #00c292; color: white;">Edit</a> -->
+                                        <button type="submit" class="btn btn-info float-right" style="background-color: #00c292; color: white;">Update</button>
+                                        <!-- <a class="btn btn-info float-right" style="background-color: #007BCC; color: white;">Update</a> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="main">
+    <div class="container">
+        <div class="row gutters">
+            <form [formGroup]="myForm" (ngSubmit)="submit()">
+
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="account-settings">
+                                <div class="user-profile">
+                                    <div class="avatar-upload">
+                                        <div class="avatar-edit">
+                                            <input type='file' (change)="handleFileInput($any($event).target.files)"
+                                            id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                            <label for="imageUpload"></label>
+                                        </div>
+                                        <div class="avatar-preview">
+                                            <div id="imagePreview"
+                                                style="background-image: url('http://localhost:3500/uploads/{{data.profile}}');">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row gutters">
+                              
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="fullName">First Name</label>
+                                        <input type="text" id="fullName" value="{{data.fname}}" formControlName="fname"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="lName">Last Name</label>
+                                        <input type="text" id="lName" value="{{data.lname}}" formControlName="lname"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="eMail">Email</label>
+                                        <input type="email" formControlName="email" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <label for="eMail">Gender</label>
+                                    <div class="form-group">
+
+                                        <div class="col-sm-3 text-secondary">
+                                            <input type="radio" name="gender" formControlName="gender" class="form"
+                                                value="male"> Male
+                                        </div>
+                                        <div class="col-sm-3 text-secondary">
+                                            <input type="radio" name="gender" formControlName="gender" class="form"
+                                                value="female">
+                                            Female
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="eMail">Date of Birth</label>
+                                        <input type="date" formControlName="dob" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="eMail">Experience</label>
+                                        <input type="text" formControlName="experience" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="phone">Phone No. 1</label>
+                                        <input type="tel" formControlName="phoneno1" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="phone">Phone No. 2</label>
+                                        <input type="tel" formControlName="phoneno2" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="website">Location</label>
+                                        <select class="form-control" formControlName="pincode" name="val-skill">
+                                            <option value="" disabled>Please select Area</option>
+                                            <option *ngFor="let l of listPincode" value="{{l.pincode}}">
+                                                {{l.location_name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" style="margin-top: 15px;">
+                                    <div class="form-group">
+                                        <label for="Street">Aadhar Card</label>
+                                        <input type="file" formControlName="aadhar_card" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row gutters" style="margin-top: 15px;">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <button type="submit" id="submit" name="submit"
+                                            class="btn btn-primary">Update</button>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->

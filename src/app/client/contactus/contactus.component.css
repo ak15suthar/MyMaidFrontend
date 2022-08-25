@@ -1,0 +1,82 @@
+.container-fluid {
+    padding: 0 1em;
+  }
+  
+  .container {
+    margin: 0 auto;
+    max-width: 996px;
+  }
+
+  .intro .container, .features .container, .portfolio .container, .contact .container {
+    padding: 5em 0;
+  }
+  
+  .intro, .features, .portfolio, .contact {
+    text-align: center;
+  }
+  
+  .intro {
+    background-color: #E74C3C;
+    color: #fff;
+  }
+  
+  .intro a, .intro a:hover, .intro a:focus, .intro a:active, .intro a:visited {
+    color: #fff;
+  }
+  
+  .features img {
+    display: block;
+    margin: 0 auto 1em;
+    max-width: 200px;
+  }
+  
+  .features .col-3 {
+    margin: 3em auto;
+    width: 100%;
+  }
+
+  .contact form {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    border-top: 8px solid #007bcc;
+    box-shadow: 0 1px 2px rgba(0,0,0,.15);
+    padding: 1em;
+  }
+  
+  .contact form input, .contact form textarea {
+    border: none;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 1em;
+    padding: 1em;
+    width: 100%;
+  }
+  
+  .contact form textarea {
+    height: 6em;
+  }
+  
+  .contact form input[type="submit"] {
+    background-color: #007bcc;
+    border-radius: 0;
+    color: #fff;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+
+  a, a:hover, a:focus, a:active, a:visited {
+    color: #007bcc;
+    text-decoration: underline;
+  }
+
+  @keyframes show-header {
+    0% {
+        top: -4em;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+

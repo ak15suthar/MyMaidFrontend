@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+<!-- <div class="container">
+  <div class="card" style="width: 18rem; margin-top: 120px;">
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <hr style="
+      width: 100%;
+      border-top: 5px solid #107eed;
+      border-bottom: none 
+    " />
+      <h5>Patient Name :</h5>
+      <h5>Doctor Name : </h5>
+      <h5>Clinic Name : </h5>
+      <h5>
+        Appointment Date :
+      </h5>
+      <h5>Appointment Time : </h5>
+
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div id="wrapper" style="margin-top: 130px;">
+    <header>
+      <h2 class="text-center">Bookings</h2>
+
+    </header>
+    <h2 class="h-bold d-flex justify-content-center">
+      <hr style="width: 5%; height: 2px; margin-top: -3px; text-align: center; color:black; background-color: black;">
+    </h2>
+  </div>
+  <!-- <h1 class="m-5 text-center">MY BLOGS</h1>
+  <hr> -->
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let l of list">
+      <div class="blog_card">
+        <div class="blog_card_image">
+          <img src="https://abhishekdana1999.github.io/Mywebsite/img/blog_1.png" alt="">
+        </div>
+        <div class="blog_card_content" style="text-align: center; margin-top: -40px;">
+          <h3>{{l.fname}} {{l.lname}}</h3>
+          <hr>
+          <p><strong>Category Name :</strong> {{l.category_name}}</p>
+          <p><strong>Booking Date :</strong> {{l.booking_date | date:"mediumDate"}} </p>
+          <p><strong>Start Date :</strong> {{l.start_date | date:"mediumDate"}}</p>
+          <p><strong>End Date :</strong> {{l.end_date | date:"mediumDate"}}</p>
+          <p><strong>Preferable Start Time :</strong> {{l.prefer_start_time}}</p>
+          <p><strong>Preferable End Time :</strong> {{l.prefer_end_time}}</p>
+          <p><strong>House Size :</strong> {{l.house_size}}</p>
+          <p><strong>Address :</strong> {{l.door_no}}, {{l.street_name}}, {{l.location_name}}, {{l.city}}, {{l.pincode}}</p>
+          <h5 *ngIf="l.status_id == 1">
+            <a class="btn btn-warning btn-sm btn-lg disabled" style="color: white;">Pending</a>
+          </h5>
+          <h5 *ngIf="l.status_id == 2">
+            <a class="btn btn-success btn-sm btn-lg disabled" style="color: white;">Accepted</a>
+          </h5>
+          <h5 *ngIf="l.status_id == 3">
+            <a class="btn btn-danger btn-sm btn-lg disabled" style="color: white;">Rejected</a>
+          </h5>
+          <!-- <a href="https://abhishekdana1999.github.io/Mywebsite/blog/login-page.html">
+            <h6>Read More</h6>
+          </a> -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

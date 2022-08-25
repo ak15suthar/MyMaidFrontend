@@ -1,0 +1,42 @@
+<nav>
+    <div id="logo">MyMaid</div>
+
+    <label for="drop" class="toggle">Menu</label>
+    <input type="checkbox" id="drop" />
+    <ul class="menu">
+        <li><a [routerLink]="['/maid-profile']">View Profile</a></li>
+        <li><a [routerLink]="['/maid-editprofile']">Edit Profile</a></li>
+        <li><a [routerLink]="['/maid-resetpassword']">Change Password</a></li>
+        <li><a (click)="logout()">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="main-menu-area mg-tb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-left: 123px;">
+                <ul class="nav nav-tabs notika-menu-wrap menu-it-icon-pro">
+                    <li class="active"><a data-toggle="tab" [routerLink]="['/maid-dashboard']"
+                            routerLinkActive="router-link-active"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li><a data-toggle="tab" [routerLink]="['/maid-booking']" routerLinkActive="router-link-active"><i
+                                class="fas fa-calendar-check"></i> Booking</a>
+                    </li>
+                    <li><a data-toggle="tab" [routerLink]="['/maid-category']" routerLinkActive="router-link-active"><i
+                                class="fas fa-quidditch"></i> Category</a>
+                    </li>
+                    <!-- <li><a data-toggle="tab" [routerLink]="['/maid-client']" routerLinkActive="router-link-active"><i
+                                class="fas fa-user"></i> Client</a>
+                    </li> -->
+                    
+                    <!-- <li><a data-toggle="tab" [routerLink]="['/maid-location']" routerLinkActive="router-link-active"><i
+                                class="fas fa-map-marked-alt"></i> Location</a>
+                    </li> -->
+                    <!-- <li><a data-toggle="tab" [routerLink]="['/maid-feedback']" routerLinkActive="router-link-active"><i
+                                class="fas fa-comments"></i>Feedback</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

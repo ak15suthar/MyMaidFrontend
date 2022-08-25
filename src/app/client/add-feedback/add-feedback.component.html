@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+
+<main >
+    <div id="wrapper" style="margin-top: 100px;">
+        <header>
+          <h2 class="text-center">Give your feedback</h2>
+    
+        </header>
+        <h2 class="h-bold d-flex justify-content-center">
+          <hr style="width: 25%; height: 2px; margin-top: -3px; text-align: center; color:black; background-color: black;">
+        </h2>
+      </div>
+    <div class="card-layout layout-medium" style="margin-top: 10px;">
+        <div class="content">
+            
+            <form [formGroup]="myForm" (ngSubmit)="submit()">
+                <h4>
+                    Rating
+                </h4>
+                <div class="col-sm-12">
+                    <ul class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-block">
+                        <li (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}">
+                            <i class="fa fa-star"></i>
+                        </li>
+                    </ul>
+                </div>
+                <h4>
+                    Write review
+                </h4>
+                <textarea formControlName="comments" name="users-feedback" id="users-feedback"></textarea>
+                <div class="user-actions">
+                    <button type="submit" class="btn-primary">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
